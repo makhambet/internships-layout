@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="./style.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<header id="app2">
+		<div class="toggle-menu" :class="{isActive: active}">
+			<div class="exit" @click="active=!active">X</div>
+			<ul>
+				<li>
+					<a href="#">home</a>
+				</li>
+				<li>
+					<a href="#">portfolio</a>
+				</li>
+				<li>
+					<a href="#">about us</a>
+				</li>
+				<li>
+					<a href="#">contact</a>
+				</li>
+			</ul>
+		</div>
+		<div class="wrapper">
+			<nav class="header-menu">
+				<ul>
+					<li>
+						<a href="#">home</a>
+					</li>
+					<li>
+						<a href="#">portfolio</a>
+					</li>
+					<li>
+						<a href="#">about us</a>
+					</li>
+					<li>
+						<a href="#">contact</a>
+					</li>
+				</ul>
+			</nav>
+			<div class="toggle" @click="active=!active">
+				<div class="span"></div>
+				<div class="span"></div>
+				<div class="span"></div>
+			</div>
+			<div class="header-content">
+				<div class="content-text">
+					<h1>our strong <span class="space">organaisation</span></h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium facere vel dicta ab voluptate consequuntur. Suscipit sequi minima nulla asperiores.</p>
+					<div class="text-btn">
+						<a href="#">Contact Us</a>
+					</div>
+				</div>
+				<div class="content-video">
+					<div class="video">
+						<img src="Vedio-Icon.png" alt="">
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<article  id="app">
+		<div class="wrapper">
+			<div class="article-content">
+				<div class="article-block1">
+					<h2>do you know we can provide for you?</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem eligendi temporibus culpa quaerat ducimus ipsa beatae iure reiciendis nostrum optio eveniet eaque molestiae perferendis similique necessitatibuse.</p>
+					<div class="block1-btn">
+						<a href="#">Learn More</a>
+					</div>
+				</div>
+				<div class="article-block2">
+					<div class="block2-market">
+						<div class="market-img">
+							<img src="Settings.png" alt="">
+						</div>
+						<div class="market-text">
+							<p class="market-title">Management</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi quaerat magnam beatae hic voluptas iusto. Nihil placeat, sapiente molestiae vitae.</p>
+						</div>
+					</div>
+					<div class="block2-market">
+						<div class="market-img">
+							<img src="Pencil.png" alt="">
+						</div>
+						<div class="market-text">
+							<p class="market-title">UI/UX Design</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi quaerat magnam beatae hic voluptas iusto. Nihil placeat, sapiente molestiae vitae.</p>
+						</div>
+					</div>
+					<div class="block2-market">
+						<div class="market-img">
+							<img src="Diamond.png" alt="">
+						</div>
+						<div class="market-text">
+							<p class="market-title">Logo/Branding</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi quaerat magnam beatae hic voluptas iusto. Nihil placeat, sapiente molestiae vitae.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<div class="article-products">
+				<h2 class="">feature products</h2>
+				<div class="products-text">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non et excepturi aut, officia .</p>
+					<div class="hr"></div>
+				</div>
+				<div class="products-menu">
+					<ul>
+						<li @click="counter(1,8)">all</a></li>
+						<li @click="counter(1,2)">print template</a></li>
+						<li @click="counter(3,4)">web template</a></li>
+						<li @click="counter(5,6)">user interface</a></li>
+						<li @click="counter(7,8)">mock-up</a></li>
+					</ul>
+				</div>
+				<div class="products-img">
+					<div v-for="item in nums" :key="item.id">
+						<span v-if="item===count">{{item}}</span>
+					</div>
+				</div>
+			</div>
+			<div class="article-meet">
+				<h2>meet our team</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa et esse perferendis exercitationem quam odio.</p>
+				<div class="hr"></div>
+			</div>
+			<div class="products-profile">
+				<div class="profile-avatar">
+					<img :src="avatar" alt="">
+				</div>
+				<div class="profile-content">
+					<h2>{{name}}</h2>
+					<p>{{email}}</p>
+					<div class="content-img">
+						<div v-for="(a, index) in info.data" :key="index">
+							<img @click="open(index)" :src="a.avatar" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+	<section class="sect-subscribe">
+		<div class="wrapper">
+			<h3>Design tips, tricks, and freebies7 Delived weekly</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit eos, numquam sequi.</p>
+			<form action="send.php">
+				<input type="text" placeholder="Email Address...">
+				<input type="submit" value="SUBSCRIBE">
+			</form>
+		</div>
+	</section>
+	<section class="sect-contact">
+		<div class="wrapper">
+			<div class="contact-text">
+				<h2>get in touch</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, nostrum rem sapiente ducimus enim eius dicta nihil reprehenderit dignissimos dolore! dicta nihil reprehenderit dignissimos dolore!</p>
+				<div class="hr"></div>
+			</div>
+			<div class="contact-send">
+				<div class="send-block1">
+					<form>
+						<input type="text" placeholder="Name">
+						<input type="email" placeholder="Your Mail">
+						<textarea placeholder="Type your message"></textarea>
+						<input type="submit" value="SEND MESSAGE">
+					</form>
+				</div>
+				<div class="send-block2">
+					<div class="send-block2-text">
+						<h4>contact info</h4>
+						<address>jalalabad 24/A, Ambarkhana, Sylhet, Bangladesh</address>
+						<a href="#">redwan@deviserweb.com</a><br>
+						<a href="#">(+88)017 617 46373</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>	
+	<footer>
+		<div class="wrapper">
+			<div class="footer-content">
+				<div class="footer-copyright">
+					<p>&copy; Copyright @junaed 2016, All rights reserved</p>
+				</div>
+				<div class="footer-social">
+					<a href="#"><img src="Twitter_Rounded_Solid.png" alt=""></a>
+					<a href="#"><img src="LinkedIn_Rounded_Solid.png" alt=""></a>
+					<a href="#"><img src="Google_Rounded_Solid.png" alt=""></a>
+					<a href="#"><img src="Facebook_Rounded_Solid.png" alt=""></a>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script>
+	<script>
+		var app = new Vue({
+			el: '#app',
+			data:{
+				info: [],
+				avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg',
+				name: 'George Bluth',
+				email: 'george.bluth@reqres.in',
+				nums: 8,
+				count: 0,
+			},
+			mounted() {
+				axios
+				.get('https://reqres.in/api/users')
+				.then(response => (this.info = response.data));
+			},
+			methods:{
+				open(index){
+					let arr = this.info.data[index]
+					this.avatar = arr.avatar
+					this.name = arr.first_name + ' ' + arr.last_name
+					this.email = arr.email
+					console.log(this.avatar)
+				},
+				counter(a, b){
+					this.nums = 0
+					for(var i=a; i<=b; i++){
+						this.count = i;
+						console.log(this.count)
+						this.nums++
+					}
+				}
+			},
+		})
+		var app2 = new Vue({
+			el: '#app2',
+			data () {
+			  return {
+			    active:false
+			  };
+			}
+		})
+	</script>
+</body>
+</html>
